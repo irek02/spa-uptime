@@ -1,0 +1,23 @@
+{
+  "name": "spa-uptime",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "puppeteer": "^1.12.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irek02/spa-uptime.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irek02/spa-uptime/issues"
+  },
+  "homepage": "https://github.com/irek02/spa-uptime#readme"
+}
