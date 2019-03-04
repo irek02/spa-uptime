@@ -1,10 +1,11 @@
 const puppeteer = require('puppeteer');
- 
+
 (async () => {
 
-  const browser = await puppeteer.launch({
-    //headless: false
-  });
+  const browser = puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+  // const browser = await puppeteer.launch({
+  //   //headless: false
+  // });
 
   const page = await browser.newPage();
 
