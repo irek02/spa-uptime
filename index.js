@@ -9,10 +9,11 @@ const puppeteer = require('puppeteer');
 
   const page = await browser.newPage();
 
-  await page.goto('http://codingbootcamponline.com/signup/');
+  await page.goto('https://irek02.github.io/habit-tracker/#/calendar/2018/0');
 
   const r = await page.evaluate((sel) => {
-    return document.querySelector(sel).innerHTML.search('Once enough people sign up');
+    return document.querySelector(sel).innerHTML.search('january');
+    // return document.querySelector(sel).innerHTML;
   }, 'body');
 
   console.log(r);
