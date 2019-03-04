@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 8080;
 
 app.get('/', (req, res) => res.send('Hello World!'));
 app.get('/ping', async (req, res) => res.json(await ping()));
@@ -11,9 +11,6 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 const ping = async () => {
 
   const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
-  // const browser = await puppeteer.launch({
-  //   //headless: false
-  // });
 
   const page = await browser.newPage();
 
