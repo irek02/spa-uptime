@@ -1,6 +1,14 @@
 const puppeteer = require('puppeteer');
 
-(async () => {
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/ping', async (req, res) => res.json(await ping()));
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+const ping = async () => {
 
   const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
   // const browser = await puppeteer.launch({
@@ -16,10 +24,10 @@ const puppeteer = require('puppeteer');
     // return document.querySelector(sel).innerHTML;
   }, 'body');
 
-  console.log(r);
-
- // await page.pdf({path: 'hn.pdf', format: 'A4'});
+  const r2 = await page.metrics();
 
   await browser.close();
 
-})();
+  return r2;
+
+};
